@@ -11,7 +11,7 @@ func txtlookup(name string) (dns []string) {
 
 	if err != nil {
 		//panic(err)
-		print(err)
+		fmt.Println(err)
 	}
 	return dns
 }
@@ -20,7 +20,7 @@ func LookupHost(name string) (dns []string) {
 
 	if err != nil {
 		//panic(err)
-		print(err)
+		fmt.Println(err)
 	}
 	return dns
 }
