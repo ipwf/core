@@ -17,5 +17,5 @@ func main() {
 	case "host":
 		dns, _ = net.LookupHost(name)
 	}
-	fmt.Println(dns)
+	fmt.Println(name, dns)
 }
