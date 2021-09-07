@@ -10,7 +10,8 @@ func txtlookup(name string) (dns []string) {
 	dns, err := net.LookupTXT(name)
 
 	if err != nil {
-		panic(err)
+		//panic(err)
+		print(err)
 	}
 	return dns
 }
@@ -18,7 +19,8 @@ func LookupHost(name string) (dns []string) {
 	dns, err := net.LookupHost(name)
 
 	if err != nil {
-		panic(err)
+		//panic(err)
+		print(err)
 	}
 	return dns
 }
