@@ -6,6 +6,22 @@ import (
 	"os"
 )
 
+func txtlookup(name string) (dns []string) {
+	dns, err := net.LookupTXT(name)
+
+	if err != nil {
+		panic(err)
+	}
+	return dns
+}
+func LookupHost(name string) (dns []string) {
+	dns, err := net.LookupHost(name)
+
+	if err != nil {
+		panic(err)
+	}
+	return dns
+}
 func main() {
 	cmd := os.Args[1]
 	name := os.Args[2]
@@ -13,9 +29,10 @@ func main() {
 	var dns []string
 	switch cmd {
 	case "txt":
-		dns, _ = net.LookupTXT(name)
+		dns = txtlookup(name)
+
 	case "host":
-		dns, _ = net.LookupHost(name)
+		dns = LookupHost(name)
 	}
 	fmt.Println(name, dns)
 }
