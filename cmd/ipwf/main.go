@@ -8,7 +8,14 @@ import (
 
 func main() {
 	cmd := os.Args[1]
+	name := os.Args[2]
 
-	dns, _ := net.LookupTXT(cmd)
+	var dns []string
+	switch cmd {
+	case "txt":
+		dns, _ = net.LookupTXT(name)
+	case "host":
+		dns, _ = net.LookupHost(name)
+	}
 	fmt.Printf("%v", dns)
 }
